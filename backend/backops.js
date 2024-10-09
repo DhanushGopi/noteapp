@@ -35,7 +35,6 @@ app.post('/addnote', async (req, res) => {
     res.json({
         "msg": "Inserted Successfully"
     })
-    alert("Added");
 })
 
 app.delete('/removenote', async (req, res) => {
