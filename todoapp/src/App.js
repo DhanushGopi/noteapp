@@ -8,7 +8,7 @@ function App() {
   useEffect(() => { getnote() }, []); // to trigger the getnote func
 
   const getnote = async () => {
-    let res = await fetch("http://localhost:3001/getnote");
+    let res = await fetch("https://noteapp-backend-69dq.onrender.com/getnote");
     let resdata = await res.json();
     setNotes(resdata);
   }
@@ -27,7 +27,7 @@ function App() {
         "time": currenttime,
         "todonote": todonote.current.value,
       }
-      await fetch('http://localhost:3001/addnote',
+      await fetch('https://noteapp-backend-69dq.onrender.com/addnote',
         {
           method: "POST",
           body: JSON.stringify(note),
@@ -41,7 +41,7 @@ function App() {
   }
 
   const removenote = async (id) => {
-    let res = await fetch('http://localhost:3001/removenote?id=' + id,
+    let res = await fetch('https://noteapp-backend-69dq.onrender.com/removenote?id=' + id,
       { method: "DELETE" });
     getnote();
   }
